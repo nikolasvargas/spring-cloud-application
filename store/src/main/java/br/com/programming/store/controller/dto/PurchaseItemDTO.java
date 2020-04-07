@@ -3,6 +3,7 @@ package br.com.programming.store.controller.dto;
 public class PurchaseItemDTO {
 	private long id;
 	private int amount;
+	
 	public long getId() {
 		return id;
 	}
