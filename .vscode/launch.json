@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ProviderApplication<provider>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "br.com.programming.provider.ProviderApplication",
+            "projectName": "provider",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-StoreApplication<store>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "br.com.programming.store.StoreApplication",
+            "projectName": "store",
+            "args": ""
+        }
+    ]
+}
