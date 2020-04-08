@@ -1,0 +1,12 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    username: app
+    password: passwd
+    url: jdbc:mysql://localhost:3306/provider
+  jpa:
+    hibernate:
+      ddl-auto: create
+  

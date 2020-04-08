@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  mariadb-master:
+    image: 'bitnami/mariadb:latest'
+    container_name: mdb
+    ports:
+      - '3306:3306'
+    volumes:
+      - mariadb-data:/bitnami/mariadb
+    environment:
+      - MARIADB_ROOT_PASSWORD=master
+
+volumes:
+  mariadb-data:
