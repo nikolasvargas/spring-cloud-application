@@ -13,12 +13,12 @@ import br.com.programming.store.service.PurchaseService;
 @RequestMapping("/purchase")
 public class PurchaseController {
 
-	@Autowired
-	private PurchaseService purchaseService;
-	
-	@RequestMapping(method = RequestMethod.POST)
-	public void purchase(@RequestBody PurchaseDTO purchase) {
-		purchaseService.purchase(purchase);
-	}
+    @Autowired
+    private PurchaseService purchaseService;
+
+    @RequestMapping(method = RequestMethod.POST)
+    public void purchase(@RequestBody PurchaseDTO purchase) {
+        purchaseService.purchase(purchase);
+    }
 
 }

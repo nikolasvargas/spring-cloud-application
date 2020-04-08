@@ -7,11 +7,11 @@ import br.com.programming.provider.model.ProviderInfo;
 
 @Service
 public class InfoService {
-	
-	@Autowired
-	private InfoRepository infoRepository;
-	
-	public ProviderInfo getInfoByState(String state) {
-		return infoRepository.findByState(state);
-	}
+
+    @Autowired
+    private InfoRepository infoRepository;
+
+    public ProviderInfo getInfoByState(String state) {
+        return infoRepository.findByState(state);
+    }
 }

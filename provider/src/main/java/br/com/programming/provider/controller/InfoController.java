@@ -11,12 +11,12 @@ import br.com.programming.provider.service.InfoService;
 @RestController
 @RequestMapping("/info")
 public class InfoController {
-	
-	@Autowired
-	private InfoService infoService;
-	
-	@RequestMapping("/{state}")
-	public ProviderInfo getInfoByState(@PathVariable String state) {
-		return infoService.getInfoByState(state);
-	}
+
+    @Autowired
+    private InfoService infoService;
+
+    @RequestMapping("/{state}")
+    public ProviderInfo getInfoByState(@PathVariable String state) {
+        return infoService.getInfoByState(state);
+    }
 }

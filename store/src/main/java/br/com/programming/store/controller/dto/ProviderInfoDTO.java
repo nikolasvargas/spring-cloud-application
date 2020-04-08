@@ -1,13 +1,13 @@
 package br.com.programming.store.controller.dto;
 
 public class ProviderInfoDTO {
-	private String address;
+    private String address;
 
-	public String getAddress() {
-		return address;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }

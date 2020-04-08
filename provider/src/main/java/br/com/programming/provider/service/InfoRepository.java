@@ -8,5 +8,5 @@ import br.com.programming.provider.model.ProviderInfo;
 @Repository
 public interface InfoRepository extends CrudRepository<ProviderInfo, Long>{
 
-	ProviderInfo findByState(String state);
+    ProviderInfo findByState(String state);
 }

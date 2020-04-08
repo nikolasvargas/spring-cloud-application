@@ -7,46 +7,46 @@ import javax.persistence.Id;
 
 @Entity
 public class ProviderInfo {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	private String name;
-	
-	private String state;
-	
-	private String address;
 
-	public Long getId() {
-		return id;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    private String name;
 
-	public String getName() {
-		return name;
-	}
+    private String state;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    private String address;
 
-	public String getState() {
-		return state;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setState(String state) {
-		this.state = state;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }

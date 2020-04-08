@@ -11,14 +11,12 @@ import br.com.programming.store.controller.dto.PurchaseDTO;
 @Service
 public class PurchaseService {
 
-	public void purchase(PurchaseDTO purchase) {
-		RestTemplate client = new RestTemplate();
-		ResponseEntity<ProviderInfoDTO> exchange = client.exchange(
-				"http://localhost:8081/info/"+purchase.getAddress().getState(),
-				HttpMethod.GET,
-				null,
-				ProviderInfoDTO.class
-		);
-		System.out.println(exchange.getBody().getAddress());
-	}
+    public void purchase(PurchaseDTO purchase) {
+        RestTemplate client = new RestTemplate();
+        ResponseEntity<ProviderInfoDTO> exchange = client.exchange(
+                "http://localhost:8081/info/" + purchase.getAddress().getState(),
+                HttpMethod.GET, null,
+                ProviderInfoDTO.class);
+        System.out.println(exchange.getBody().getAddress());
+    }
 }
