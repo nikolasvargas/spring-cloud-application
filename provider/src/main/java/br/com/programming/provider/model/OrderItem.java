@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class OrderItem {
@@ -16,7 +16,7 @@ public class OrderItem {
 
     private Integer amount;
 
-    @ManyToMany @JoinColumn(name = "productId")
+    @ManyToOne @JoinColumn(name = "productId")
     private Product product;
 
     public Long getId() {
