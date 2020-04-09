@@ -14,7 +14,7 @@ public class PurchaseService {
     public void purchase(PurchaseDTO purchase) {
         RestTemplate client = new RestTemplate();
         ResponseEntity<ProviderInfoDTO> exchange = client.exchange(
-                "http://localhost:8081/info/" + purchase.getAddress().getState(),
+                "http://provider/info/" + purchase.getAddress().getState(),
                 HttpMethod.GET, null,
                 ProviderInfoDTO.class);
         System.out.println(exchange.getBody().getAddress());
