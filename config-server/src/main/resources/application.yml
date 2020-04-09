@@ -2,10 +2,9 @@ server:
   port: 8888
 
 spring:
-  profiles:
-    active: native
   cloud:
     config:
       server:
-        native:
-          search-locations: /home/nikolas/programming/eclipse
+        git:
+          uri: https://github.com/nikolasvargas/spring-cloud-application
+          search-paths: secrets
