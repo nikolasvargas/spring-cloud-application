@@ -19,6 +19,16 @@
             "mainClass": "br.com.programming.store.StoreApplication",
             "projectName": "store",
             "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-EurekaServerApplication<eureka-server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "br.com.programming.eureka.EurekaServerApplication",
+            "projectName": "eureka-server",
+            "args": ""
         }
     ]
 }
