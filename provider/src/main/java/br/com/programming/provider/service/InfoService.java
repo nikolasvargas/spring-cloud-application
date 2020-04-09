@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.programming.provider.model.ProviderInfo;
+import br.com.programming.provider.repository.InfoRepository;
 
 @Service
 public class InfoService {

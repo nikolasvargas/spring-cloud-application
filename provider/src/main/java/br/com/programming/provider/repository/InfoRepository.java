@@ -1,4 +1,4 @@
-package br.com.programming.provider.service;
+package br.com.programming.provider.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
