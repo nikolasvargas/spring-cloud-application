@@ -17,4 +17,8 @@ public class InfoService {
     public List<ProviderInfo> getInfoByState(String state) {
         return infoRepository.findByState(state);
     }
+
+    public List<ProviderInfo> getAll() {
+        return infoRepository.findAll();
+    }
 }

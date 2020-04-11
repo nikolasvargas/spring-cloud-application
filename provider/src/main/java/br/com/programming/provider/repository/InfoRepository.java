@@ -11,4 +11,7 @@ import br.com.programming.provider.model.ProviderInfo;
 public interface InfoRepository extends CrudRepository<ProviderInfo, Long>{
 
     List<ProviderInfo> findByState(String state);
+
+    @Override
+    List<ProviderInfo> findAll();
 }
