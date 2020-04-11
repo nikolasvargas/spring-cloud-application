@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.programming.provider.dto.OrderItemDTO;
-import br.com.programming.provider.model.Order;
+import br.com.programming.provider.dto.PurchaseItemDTO;
+import br.com.programming.provider.model.PurchaseOrder;
 import br.com.programming.provider.service.OrderService;
 
 @RestController
@@ -20,13 +20,13 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    @RequestMapping("/{id}")
-    public Order getOrderById(@PathVariable Long id) {
-        return orderService.getOrderById(id);
+    @RequestMapping(method = RequestMethod.POST)
+    public PurchaseOrder sendOrder(@RequestBody List<PurchaseItemDTO> orderItem) {
+        return orderService.sendOrder(orderItem);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public Order sentOrder(@RequestBody List<OrderItemDTO> orderItem) {
-        return orderService.sendOrder(orderItem);
+    @RequestMapping("/{id}")
+    public PurchaseOrder getOrderById(@PathVariable Long id) {
+        return orderService.getOrderById(id);
     }
 }

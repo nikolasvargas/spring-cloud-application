@@ -1,10 +1,10 @@
 package br.com.programming.provider.dto;
 
-public class OrderItemDTO {
+public class PurchaseItemDTO {
 
     private long id;
 
-    private int quantidade;
+    private int amount;
 
     public long getId() {
         return id;
@@ -14,11 +14,11 @@ public class OrderItemDTO {
         this.id = id;
     }
 
-    public int getQuantidade() {
-        return quantidade;
+    public int getAmount() {
+        return amount;
     }
 
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
+    public void setQuantidade(int amount) {
+        this.amount = amount;
     }
 }

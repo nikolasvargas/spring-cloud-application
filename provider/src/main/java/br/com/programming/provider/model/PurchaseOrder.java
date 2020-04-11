@@ -13,7 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Order {
+public class PurchaseOrder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,14 +26,14 @@ public class Order {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "orderId")
-    private List<OrderItem> items;
+    private List<PurchaseItem> items;
 
-    public Order(List<OrderItem> items) {
+    public PurchaseOrder(List<PurchaseItem> items) {
         this.items = items;
         this.status = OrderStatus.RECEIVED;
     }
 
-    public Order() {}
+    public PurchaseOrder() {}
 
     public Long getId() {
         return id;
@@ -59,11 +59,11 @@ public class Order {
         this.status = status;
     }
 
-    public List<OrderItem> getItems() {
+    public List<PurchaseItem> getItems() {
         return items;
     }
 
-    public void setItems(List<OrderItem> items) {
+    public void setItems(List<PurchaseItem> items) {
         this.items = items;
     }
 }

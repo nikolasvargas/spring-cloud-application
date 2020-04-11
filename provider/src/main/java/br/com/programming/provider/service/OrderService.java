@@ -6,9 +6,9 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.programming.provider.dto.OrderItemDTO;
-import br.com.programming.provider.model.Order;
-import br.com.programming.provider.model.OrderItem;
+import br.com.programming.provider.dto.PurchaseItemDTO;
+import br.com.programming.provider.model.PurchaseOrder;
+import br.com.programming.provider.model.PurchaseItem;
 import br.com.programming.provider.model.Product;
 import br.com.programming.provider.repository.OrderRepository;
 import br.com.programming.provider.repository.ProductRepository;
@@ -22,52 +22,48 @@ public class OrderService {
     @Autowired
     private ProductRepository productRepository;
 
-    private List<Product> toProductList(List<OrderItemDTO> items) {
-        List<Long> itemIds = items
-                .stream()
-                .map(i -> i.getId())
-                .collect(Collectors.toList());
-
-        return productRepository.findByIdIn(itemIds);
+    private List<Long> toProductList(List<PurchaseItemDTO> items) {
+        return items.stream().map(i -> i.getId()).collect(Collectors.toList());
     }
 
-    private Order createOrder(List<OrderItem> orderItem) {
-        Order order = new Order();
+    private PurchaseOrder createOrder(List<PurchaseItemDTO> orderItem) {
+        PurchaseOrder order = new PurchaseOrder(toOrderItem(orderItem));
         order.setEstimatedTime(orderItem.size());
         return order;
     }
 
-    private OrderItem createOrderItem(Product product, OrderItemDTO item) {
-        OrderItem orderItem = new OrderItem();
+    private PurchaseItem createOrderItem(Product product, PurchaseItemDTO item) {
+        PurchaseItem orderItem = new PurchaseItem();
         orderItem.setProduct(product);
-        orderItem.setAmount(item.getQuantidade());
+        orderItem.setAmount(item.getAmount());
         return orderItem;
     }
 
-    private List<OrderItem> toOrderItem(List<OrderItemDTO> items) {
-        List<Product> productsList = toProductList(items);
+    private List<PurchaseItem> toOrderItem(List<PurchaseItemDTO> items) {
+        List<Product> productsList = productRepository.findByIdIn(toProductList(items));
 
-        return items.stream().map(item -> {
-            Product product = productsList
+        return items
+                .stream()
+                .map(item -> { Product product = productsList
                     .stream()
                     .filter(p -> p.getId() == item.getId())
                     .findFirst()
                     .get();
-            return createOrderItem(product, item);
-        }).collect(Collectors.toList());
-
+                    return createOrderItem(product, item);
+                })
+                .collect(Collectors.toList());
     }
 
-    public Order sendOrder(List<OrderItemDTO> orderItem) {
+    public PurchaseOrder sendOrder(List<PurchaseItemDTO> orderItem) {
         if (orderItem == null) {
             return null;
         }
 
-        Order order = createOrder(toOrderItem(orderItem));
+        PurchaseOrder order = createOrder(orderItem);
         return orderRepository.save(order);
     }
 
-    public Order getOrderById(Long id) {
-        return this.orderRepository.findById(id).orElse(new Order());
+    public PurchaseOrder getOrderById(Long id) {
+        return this.orderRepository.findById(id).orElse(new PurchaseOrder());
     }
 }
