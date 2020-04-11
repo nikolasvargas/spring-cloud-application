@@ -1,5 +1,7 @@
 package br.com.programming.provider.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +18,13 @@ public class InfoController {
     private InfoService infoService;
 
     @RequestMapping("/{state}")
-    public ProviderInfo getInfoByState(@PathVariable String state) {
-        return infoService.getInfoByState(state);
+    public Optional<ProviderInfo> getInfoByState(@PathVariable String state) {
+        return Optional.ofNullable(
+                infoService
+                    .getInfoByState(state)
+                    .stream()
+                    .findFirst()
+                    .get()
+                );
     }
 }
