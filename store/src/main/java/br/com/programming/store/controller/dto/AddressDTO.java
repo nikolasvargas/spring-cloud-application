@@ -24,4 +24,12 @@ public class AddressDTO {
         this.state = state;
     }
 
+    @Override
+    public String toString() {
+        return "{" +
+            " street='" + getStreet() + "'" +
+            ", number='" + getNumber() + "'" +
+            ", state='" + getState() + "'" +
+            "}";
+    }
 }
