@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.programming.store.controller.dto.PurchaseDTO;
+import br.com.programming.store.model.Purchase;
 import br.com.programming.store.service.PurchaseService;
 
 @RestController
@@ -17,8 +18,8 @@ public class PurchaseController {
     private PurchaseService purchaseService;
 
     @RequestMapping(method = RequestMethod.POST)
-    public void purchase(@RequestBody PurchaseDTO purchase) {
-        purchaseService.purchase(purchase);
+    public Purchase purchase(@RequestBody PurchaseDTO purchase) {
+        return purchaseService.purchase(purchase);
     }
 
 }
