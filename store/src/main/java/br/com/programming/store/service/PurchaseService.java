@@ -7,9 +7,9 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 import br.com.programming.store.client.ProviderClient;
 import br.com.programming.store.controller.dto.OrderInfoDTO;
-import br.com.programming.store.controller.dto.ProviderInfoDTO;
 import br.com.programming.store.controller.dto.PurchaseDTO;
 import br.com.programming.store.model.Purchase;
+import br.com.programming.store.repository.PurchaseRepository;
 
 @Service
 public class PurchaseService {
@@ -17,14 +17,19 @@ public class PurchaseService {
     @Autowired
     private ProviderClient providerClient;
 
-    @HystrixCommand(fallbackMethod = "purchaseFallback")
+    @Autowired
+    private PurchaseRepository purchaseRepository;
+
+    @HystrixCommand(threadPoolKey = "getByIdThreadPool")
+    public Purchase getById(Long id) {
+        return purchaseRepository.findById(id).orElse(new Purchase());
+    }
+
+    @HystrixCommand(fallbackMethod = "purchaseFallback", threadPoolKey = "purchaseThreadPool")
     public Purchase purchase(PurchaseDTO purchase) {
-        ProviderInfoDTO info = providerClient.getInfoByState(purchase.getAddress().getState());
-
         OrderInfoDTO order = providerClient.purchaseItem(purchase.getItems());
-
         Purchase p = new Purchase(order.getId(), order.getEstimatedTime(), purchase.getAddress().toString());
-
+        purchaseRepository.save(p);
         return p;
     }
 
