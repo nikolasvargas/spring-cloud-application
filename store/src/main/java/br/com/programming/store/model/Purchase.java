@@ -1,7 +1,12 @@
 package br.com.programming.store.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Purchase {
 
+    @Id
     private Long orderId;
 
     private Integer estimatedTime;
