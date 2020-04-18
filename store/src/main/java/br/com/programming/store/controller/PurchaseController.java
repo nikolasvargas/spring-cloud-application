@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.programming.store.controller.dto.PurchaseDTO;
+import br.com.programming.store.dto.PurchaseDTO;
 import br.com.programming.store.model.Purchase;
 import br.com.programming.store.service.PurchaseService;
 

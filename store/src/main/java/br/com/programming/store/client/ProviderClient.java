@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import br.com.programming.store.controller.dto.ProviderInfoDTO;
-import br.com.programming.store.controller.dto.PurchaseItemDTO;
-import br.com.programming.store.controller.dto.OrderInfoDTO;
+import br.com.programming.store.dto.OrderInfoDTO;
+import br.com.programming.store.dto.ProviderInfoDTO;
+import br.com.programming.store.dto.PurchaseItemDTO;
 
 
 @FeignClient("provider")

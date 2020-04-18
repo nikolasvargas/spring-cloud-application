@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 import br.com.programming.store.client.ProviderClient;
-import br.com.programming.store.controller.dto.OrderInfoDTO;
-import br.com.programming.store.controller.dto.PurchaseDTO;
+import br.com.programming.store.dto.OrderInfoDTO;
+import br.com.programming.store.dto.PurchaseDTO;
 import br.com.programming.store.model.Purchase;
 import br.com.programming.store.repository.PurchaseRepository;
 

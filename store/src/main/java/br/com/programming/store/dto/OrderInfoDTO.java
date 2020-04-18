@@ -1,4 +1,4 @@
-package br.com.programming.store.controller.dto;
+package br.com.programming.store.dto;
 
 public class OrderInfoDTO {
 

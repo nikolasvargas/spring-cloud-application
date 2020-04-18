@@ -1,4 +1,4 @@
-package br.com.programming.store.controller.dto;
+package br.com.programming.store.dto;
 
 import java.util.List;
 
