@@ -1,5 +1,6 @@
 package br.com.programming.hauler.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.programming.hauler.dto.DeliveryDTO;
@@ -10,6 +11,7 @@ import br.com.programming.hauler.repository.DeliveryRepository;
 @Service
 public class DeliveryService {
 
+    @Autowired
     private DeliveryRepository repository;
 
     private Delivery createDelivery(DeliveryDTO deliveryDTO) {
