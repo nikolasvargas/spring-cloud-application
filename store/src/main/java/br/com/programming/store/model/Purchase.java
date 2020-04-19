@@ -9,16 +9,25 @@ public class Purchase {
     @Id
     private Long orderId;
 
+    private Long voucherId;
+
     private Integer estimatedTime;
 
     private String fromAddress;
 
+    private String providerAddress;
+
+    private String finalAddress;
+
     public Purchase() {}
 
-    public Purchase(Long id, Integer estimatedTime, String fromAddress) {
+    public Purchase(Long id, Long voucherId, Integer estimatedTime, String fromAddress, String providerAddress, String finalAddress) {
         this.orderId = id;
+        this.voucherId = voucherId;
         this.estimatedTime = estimatedTime;
         this.fromAddress = fromAddress;
+        this.providerAddress = providerAddress;
+        this.finalAddress = finalAddress;
     }
 
     public Long getOrderId() {
@@ -27,6 +36,14 @@ public class Purchase {
 
     public void setOrderId(Long orderId) {
         this.orderId = orderId;
+    }
+
+    public Long getVoucherId() {
+        return this.voucherId;
+    }
+
+    public void setVoucherId(Long voucherId) {
+        this.voucherId = voucherId;
     }
 
     public Integer getEstimatedTime() {
@@ -43,5 +60,21 @@ public class Purchase {
 
     public void setFromAddress(String fromAddress) {
         this.fromAddress = fromAddress;
+    }
+
+    public String getProviderAddress() {
+        return providerAddress;
+    }
+
+    public void setProviderAddress(String providerAddress) {
+        this.providerAddress = providerAddress;
+    }
+
+    public String getFinalAddress() {
+        return finalAddress;
+    }
+
+    public void setFinalAddress(String finalAddress) {
+        this.finalAddress = finalAddress;
     }
 }
