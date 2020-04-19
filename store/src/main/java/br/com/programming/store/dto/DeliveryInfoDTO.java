@@ -3,6 +3,7 @@ package br.com.programming.store.dto;
 import java.time.LocalDate;
 
 public class DeliveryInfoDTO {
+
     private Long orderId;
 
     private LocalDate deliveryDate;

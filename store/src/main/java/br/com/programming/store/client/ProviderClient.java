@@ -19,5 +19,5 @@ public interface ProviderClient {
     ProviderInfoDTO getInfoByState(@PathVariable String state);
 
     @RequestMapping(method = RequestMethod.POST, value = "/order")
-    OrderInfoDTO purchaseItem(List<PurchaseItemDTO> items);
+    OrderInfoDTO sendOrder(List<PurchaseItemDTO> items);
 }

@@ -39,7 +39,7 @@ public class PurchaseService {
 
         ProviderInfoDTO stateInfo = providerClient.getInfoByState(purchase.getAddress().getState());
 
-        OrderInfoDTO order = providerClient.purchaseItem(purchase.getItems());
+        OrderInfoDTO order = providerClient.sendOrder(purchase.getItems());
 
         DeliveryInfoDTO deliveryInfo = new DeliveryInfoDTO();
         deliveryInfo.setOrderId(order.getId());
