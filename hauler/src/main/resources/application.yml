@@ -1,6 +1,5 @@
-spring:
-  application:
-    name: 'hauler'
+server:
+  port: 8082
     
 eureka:
   client:
