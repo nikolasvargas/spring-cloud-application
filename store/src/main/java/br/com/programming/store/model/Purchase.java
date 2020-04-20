@@ -17,17 +17,14 @@ public class Purchase {
 
     private String providerAddress;
 
-    private String finalAddress;
-
     public Purchase() {}
 
-    public Purchase(Long id, Long voucherId, Integer estimatedTime, String fromAddress, String providerAddress, String finalAddress) {
+    public Purchase(Long id, Long voucherId, Integer estimatedTime, String fromAddress, String providerAddress) {
         this.orderId = id;
         this.voucherId = voucherId;
         this.estimatedTime = estimatedTime;
         this.fromAddress = fromAddress;
         this.providerAddress = providerAddress;
-        this.finalAddress = finalAddress;
     }
 
     public Long getOrderId() {
@@ -68,13 +65,5 @@ public class Purchase {
 
     public void setProviderAddress(String providerAddress) {
         this.providerAddress = providerAddress;
-    }
-
-    public String getFinalAddress() {
-        return finalAddress;
-    }
-
-    public void setFinalAddress(String finalAddress) {
-        this.finalAddress = finalAddress;
     }
 }

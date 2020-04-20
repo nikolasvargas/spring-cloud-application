@@ -54,8 +54,7 @@ public class PurchaseService {
                 voucherInfo.getNumber(),
                 order.getEstimatedTime(),
                 purchase.getAddress().toString(),
-                deliveryInfo.getProviderAddress(),
-                deliveryInfo.getFinalAddress());
+                deliveryInfo.getProviderAddress());
 
         purchaseRepository.save(p);
 
