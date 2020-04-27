@@ -1,12 +1,17 @@
 package br.com.programming.store.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Purchase {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long Id;
+
     private Long orderId;
 
     private Long voucherId;
@@ -17,6 +22,8 @@ public class Purchase {
 
     private String providerAddress;
 
+    private PurchaseState state;
+
     public Purchase() {}
 
     public Purchase(Long id, Long voucherId, Integer estimatedTime, String fromAddress, String providerAddress) {
@@ -25,6 +32,14 @@ public class Purchase {
         this.estimatedTime = estimatedTime;
         this.fromAddress = fromAddress;
         this.providerAddress = providerAddress;
+    }
+
+    public Long getId() {
+        return this.Id;
+    }
+
+    public void setId(Long id) {
+        this.Id = id;
     }
 
     public Long getOrderId() {
@@ -65,5 +80,13 @@ public class Purchase {
 
     public void setProviderAddress(String providerAddress) {
         this.providerAddress = providerAddress;
+    }
+
+    public PurchaseState getState() {
+        return state;
+    }
+
+    public void setState(PurchaseState state) {
+        this.state = state;
     }
 }
