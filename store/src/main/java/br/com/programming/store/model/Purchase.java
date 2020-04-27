@@ -1,6 +1,8 @@
 package br.com.programming.store.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,6 +24,7 @@ public class Purchase {
 
     private String providerAddress;
 
+    @Enumerated(EnumType.STRING)
     private PurchaseState state;
 
     public Purchase() {}
