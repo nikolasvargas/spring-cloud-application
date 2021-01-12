@@ -1,2 +1,2 @@
-user:
-  name: 'DEV Environment'
+application:
+  role: 'DEV Environment'
