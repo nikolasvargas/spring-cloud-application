@@ -1,0 +1,5 @@
+application:
+  role: 'demo test'
+  extra: 'qualquer coisa'
+  demotest: 'pegou'
+

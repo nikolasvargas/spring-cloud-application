@@ -1,0 +1,4 @@
+application:
+  role: 'Application default'
+  extra: 'Global application default file'
+  appjpa: 'pegou oracle jpa'
